@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Website</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+			<nav class="navbar">
+				<img class="logo" src="logo.png">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="interests.html">Hobbies/interests</a></li>
+					<li><a href="Outputs.html">Academic background</a></li>
+					<li><a href="Feedback.html">Skills</a></li>
+				</ul>
+			</nav>
+			<div class="center">
+			<input type="text" name="skill" id="skill">
+			<button>Give Mishka This skill</button>
+
+			<script>
+			const list = document.querySelector ('ul')
+			const input = document.querySelector ('input')
+			const button = document.querySelector ('button')
+
+			button.onclick = function(){
+				let  newskill = input.value  
+				input.value = ''
+
+				let skillList = document.createElement('ol')
+				let skilltext = document.createElement('span')
+				let skillBtn = document.createElement('button')
+
+			    skillList.appendChild(skilltext)
+				skilltext.textContent = newskill
+
+				skillList.appendChild(skillBtn)
+				skillBtn.textContent = 'delete'
+
+				list.appendChild(skillList)
+
+				skillBtn.onclick = function () {
+				list.removeChild(skillList)
+				}
+				
+			}
+			</script>
+			<h2>Power me up and give me skills!!</h2>
+</body>
+</html>
